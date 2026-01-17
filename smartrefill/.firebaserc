@@ -1,0 +1,17 @@
+{
+  "projects": {
+    "dev": "aquaflow-management-suite",
+    "staging": "aquaflow-management-suite",
+    "prod": "aquaflow-management-suite",
+    "default": "aquaflow-management-suite"
+  },
+  "targets": {
+    "aquaflow-management-suite": {
+      "hosting": {
+        "app": [
+          "smartrefill"
+        ]
+      }
+    }
+  }
+}
