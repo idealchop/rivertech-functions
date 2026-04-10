@@ -18,6 +18,7 @@ module.exports = {
     sourceType: "module",
   },
   ignorePatterns: [
+    "src/utils/email-templates/*", // Ignore email templates.
     "/lib/**/*", // Ignore built files.
   ],
   plugins: [
@@ -25,6 +26,7 @@ module.exports = {
     "import",
   ],
   rules: {
+    "@typescript-eslint/no-explicit-any": "off",
     "quotes": ["error", "double"],
     "import/no-unresolved": 0,
     "indent": ["error", 2],
