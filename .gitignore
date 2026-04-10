@@ -3,3 +3,4 @@
 smartrefill/functions/node_modules
 smartrefill/functions/lib
 smartrefill.functions/src/.DS_Store
+smartrefill/functions/.env
