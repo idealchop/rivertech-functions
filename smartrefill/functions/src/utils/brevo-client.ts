@@ -1,6 +1,6 @@
 import * as brevo from "@getbrevo/brevo";
 import { logger } from "firebase-functions";
-
+import { brevoApiKey } from "../config/params";
 
 /**
  * Gets the authenticated Brevo API instance.
@@ -9,7 +9,7 @@ import { logger } from "firebase-functions";
  * @return {brevo.TransactionalEmailsApi} The authenticated Brevo API instance.
  */
 export const getBrevoApi = (): brevo.TransactionalEmailsApi => {
-  const apiKey = process.env.SMARTREFILL_BREVO_API_KEY;
+  const apiKey = brevoApiKey.value();
 
   if (!apiKey) {
     logger.error("Brevo API key missing: SMARTREFILL_BREVO_API_KEY not set");

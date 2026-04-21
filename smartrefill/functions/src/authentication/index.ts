@@ -1,4 +1,3 @@
-export * from "./on-user-create";
 export * from "./reset-password";
 export * from "./send-team-invite";
 export * from "./send-verification-email";

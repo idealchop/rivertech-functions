@@ -2,11 +2,12 @@ import { logger } from "firebase-functions";
 import { app } from "../config/firebase-admin";
 import { brevo, getBrevoApi } from "../utils/brevo-client";
 import { getSmartRefillVerificationTemplate } from "../utils/email-templates";
+import { appBaseUrl } from "../config/params";
 
 export async function sendVerificationEmail(email: string, name: string) {
   try {
-    // Fetch the base URL from .env, fallback to a default if necessary
-    const baseUrl = process.env.APP_BASE_URL || "https://smartrefill.io";
+    // Fetch the base URL from params, fallback to a default if necessary
+    const baseUrl = appBaseUrl.value();
     const actionCodeSettings = {
       url: `${baseUrl}/verified?email=${encodeURIComponent(email)}`,
       handleCodeInApp: true,
